@@ -2,7 +2,6 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,11 +12,7 @@ import { Router } from '@angular/router';
 export class CodeComponent implements OnInit {
   otp!: string;
   verify: any;
-  constructor(
-    private afAuth: AngularFireAuth,
-    private router: Router,
-    private ngZone: NgZone
-  ) {}
+  constructor(private router: Router, private ngZone: NgZone) {}
 
   config = {
     allowNumbersOnly: true,
