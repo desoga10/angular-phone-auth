@@ -15,9 +15,7 @@ export class PhoneNumberComponent implements OnInit {
 
   constructor(private router: Router, private ngZone: NgZone) {}
 
-  ngOnInit() {
-    // firebase.initializeApp(config);
-  }
+  ngOnInit() {}
 
   getOTP() {
     this.reCaptchaVerifier = new firebase.auth.RecaptchaVerifier(

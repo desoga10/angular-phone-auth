@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { CodeComponent } from './code/code.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PhoneNumberComponent } from './phone-number/phone-number.component';
@@ -7,7 +8,11 @@ import { PhoneNumberComponent } from './phone-number/phone-number.component';
 const routes: Routes = [
   { path: 'phone', component: PhoneNumberComponent },
   { path: 'code', component: CodeComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
   { path: '', redirectTo: '/phone', pathMatch: 'full' },
 ];
 
